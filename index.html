@@ -8,7 +8,7 @@
 	JS {
 		function getRandomArbitrary(min, max) {
 			return Math.random() * (max - min) + min;
-		}
+		}<br>
 
 		function meteorFly() {
 			//инициализация метеорита (случайного)
@@ -29,7 +29,7 @@
 				}
 
 			},50);
-		}
+		}<br>
 
 		function fire() {
 			var a = setInterval(function() {
@@ -41,7 +41,7 @@
 					$(".p").css("bottom", pbottom+5 + "px");
 				}
 			},5);
-		}
+		}<br>
 
 
 
@@ -66,7 +66,7 @@
 						$(".timer").text(current);				
 					}
 
-				}, 1000);
+				}, 1000);<br>
 
 				$(document).keydown(function(event) {
 					if (event.which == 32) {
@@ -84,7 +84,7 @@
 						}
 
 					}
-				});
+				});<br>
 
 				$(document).keydown(function(event) {
 
@@ -96,7 +96,7 @@
 			})
 
 		});
-	}
+	}<br>
 	CSS {
 			.pole {
 			background: url(z.jpg) no-repeat;
@@ -104,7 +104,7 @@
 			width: 1000px;
 			height: 600px;
 			border: 2px solid blue;
-		}
+		}<br>
 
 		.met {
 			position: absolute;
@@ -114,7 +114,7 @@
 			width: 110px;
 			background: url(v.png) no-repeat;
 			background-size: 100% 100%;
-		}
+		}<br>
 
 		.kor {
 			position: relative;
@@ -134,7 +134,7 @@
 			left: -30px;
 
 		}
-	}
+	}<br>
 	HTML {
 
 		<.head>
@@ -142,7 +142,7 @@
 			<.script type="text/javascript" src="jquery-3.2.1.min.js"></.script>
 			<.script type="text/javascript" src="index.js"></.script>
 			<.link rel="stylesheet" type="text/css" href="index.css">
-		</.head>
+		</.head><br>
 		<.body>
 			<.div class="timer">1000</.div>
 			<.div class="pole">		
@@ -154,13 +154,13 @@
 			<.button>start</.button>
 		</.body>
 
-	}
+	}<br>
 
 	JS {
 		var userName = '';
 		var points = 0;
 		var shipCurrentX = 500;
-		var shipWidth = 50;
+		var shipWidth = 50;<br>
 
 		$("INPUT[name='username']").keydown(function() {
 			if ($(this).val().length > 0) {
@@ -168,13 +168,13 @@
 			} else {
 				$(".testElem>button").attr("disabled",true);
 			}
-		})
+		})<br>
 
 		$(".testElem>button").click(function() {
 			userName = $("INPUT[name='username']").val();
 			$(".firstPage").addClass("hidden");
 			$(".secondPage").removeClass("hidden");
-		});
+		});<br>
 
 		$(".secondPage>button").click(function() {
 			console.log(userName);
