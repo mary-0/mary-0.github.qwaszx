@@ -97,6 +97,49 @@
 
 		});
 	}<br>
+	<form id="register_form">
+		<input type="text" name="login">
+		<input type="password name="passwd">
+		<button>OK<button>
+	</form><br>
+	HTML аякс{
+		$(document).ready(function{
+			$("#register_form").submit(function(event) {
+				if ($("INPUT[name='pass']").val() == $("INPUT[name='pass_check']").val()){
+											 
+				} else {
+					event.preventDefault();
+					alert();
+				}
+			})					   
+		})
+	}
+	PHP аякс{
+		$db = mysqli_connect();
+		$login = addslashes($_POST['login']);
+		$query = "SELECT * FROM users WHERE login='$login'";
+		$done = mysqli_query($db, $query);
+		if (mysqli_num_rows($done) > 0) {
+			echo "0";
+		} else {
+			echo "1";
+		}
+		mysqli_close($db);
+	}
+	JS аякс{
+		$(document).ready(function() {
+			$("INPUT[name='login']").change(function() {
+				$.post('checker.php', {
+				login: $(this).val()
+				}, function(response) {
+					if (response == 0) {
+					    	$("button").prop("disabled", true);
+					} else {
+						$("button").prop("disabled", false);
+					}
+				})
+			});		
+		});
 	CSS {
 			.pole {
 			background: url(z.jpg) no-repeat;
